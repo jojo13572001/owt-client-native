@@ -171,7 +171,7 @@ void PeerConnectionDependencyFactory::
         Bind(&PeerConnectionDependencyFactory::
                  CreateCustomizedAudioDeviceModuleOnCurrentThread,
              this));
-  } else {
+  } /*else {
 #if defined(WEBRTC_WIN)
     // For Widnows we create the audio device with non audio_device_impl
     // dependent factory to facilitate switching of playback devices.
@@ -182,7 +182,7 @@ void PeerConnectionDependencyFactory::
       adm = CreateWindowsCoreAudioAudioDeviceModule(
           task_queue_factory_.get(), true);
 #endif
-  }
+  }*/
 #endif
 
   pc_factory_ = webrtc::CreatePeerConnectionFactory(
